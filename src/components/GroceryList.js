@@ -6,7 +6,8 @@ class GroceryList extends React.Component {
 
     state = {
         items: [],
-        itemToShow: "All Items"
+        itemToShow: "All Items",
+        toggleAllComplete: true
     };
 
     addItem = item => {
@@ -37,6 +38,17 @@ class GroceryList extends React.Component {
             itemToShow: s
         });
     };
+    handleDeleteItem = id => {
+        this.setState({
+           items: this.state.items.filter(item => item.id !== id) 
+        });
+    };
+
+    removeAllItemsThatAreCollected = () => {
+        this.setState({
+           items: this.state.items.filters(item => !item.complete) 
+        });
+    };
 
     render() {
         let items = [];
@@ -54,8 +66,10 @@ class GroceryList extends React.Component {
         <div>
             <ListForm onSubmit = {this.addItem} />
             {items.map( item => (
-            <Item key={item.id}
+            <Item
+            key={item.id}
             toggleComplete={ () => this.toggleComplete(item.id)}
+            onDelete={() => this.handleDeleteItem(item.id)}
             item = {item}
             />
             ))}
@@ -68,6 +82,28 @@ class GroceryList extends React.Component {
                     <button onClick={() => this.updateItemToShow('Items already in cart')}>Items already in cart</button>
 
                 </div>
+                {this.state.items.some(item => item.complete) ? (
+                <div>
+                    <button onClick={this.removeAllItemsThatAreCollected}>
+                        Remove Items you already have from list
+                    </button>
+                </div>
+                ) : null}
+                <div>
+          <button
+            onClick={() =>
+              this.setState(state => ({
+                items: state.items.map(item => ({
+                  ...item,
+                  complete: state.toggleAllComplete
+                })),
+                toggleAllComplete: !state.toggleAllComplete
+              }))
+            }
+          >
+            Toggle All to Cart {`${this.state.toggleAllComplete}`}
+          </button>
+        </div>
         </div>
         );
     }
