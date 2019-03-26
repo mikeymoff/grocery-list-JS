@@ -60,7 +60,7 @@ class GroceryList extends React.Component {
             />
             ))}
             <div>
-                Number of Items Remaining: {this.state.items.filter( item => !item.complete).lenght}
+                Number of Items You Still Need: {this.state.items.filter( item => !item.complete).length}
                 </div>
                 <div>
                     <button onClick={() => this.updateItemToShow('All Items')}>All Items</button>
