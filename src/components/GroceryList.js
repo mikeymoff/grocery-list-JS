@@ -46,9 +46,9 @@ class GroceryList extends React.Component {
     };
 
     removeAllItemsThatAreCollected = () => {
-        this.setState({
-           items: this.state.items.filters(item => !item.complete)
-        });
+        this.setState(state => ({
+           items: state.items.filter(item => !item.complete) 
+        }));
     };
 
     render() {

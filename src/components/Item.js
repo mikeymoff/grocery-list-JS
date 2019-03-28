@@ -14,6 +14,7 @@ export default props => (
     >
         {props.item.text}
     </div>
+
     <br/>
     <Button
     inverted
@@ -23,4 +24,5 @@ export default props => (
 
 
 </div>
+
 );
