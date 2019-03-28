@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
+import { Button } from 'semantic-ui-react';
+
+
 
 class ListForm extends Component {
 
@@ -10,6 +13,7 @@ class ListForm extends Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
+           
         });
     };
 
@@ -34,7 +38,7 @@ class ListForm extends Component {
         value={this.state.text}
         onChange={this.handleChange}
         placeholder="Add Item..." />
-        <button onClick={this.handleSubmit}>Add Item</button>
+        <Button size='small' color='blue' onClick={this.handleSubmit}>Add Item</Button>
         </form>
         );
     };

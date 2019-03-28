@@ -1,4 +1,7 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
+
+
 
 export default props => (
 <div style={{ display: "flex", justifyContent: 'center' }}>
@@ -11,7 +14,7 @@ export default props => (
     >
         {props.item.text}
     </div>
-    <button onClick={props.onDelete}>x</button>
+    <Button color='red' size='small' onClick={props.onDelete}>x</Button>
 </div>   
 );
  

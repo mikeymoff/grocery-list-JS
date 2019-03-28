@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
+}
+
+.Item {
+  font-size: calc(10px + 2vmin);
 }
 
 .App-logo {

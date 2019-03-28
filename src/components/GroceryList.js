@@ -1,6 +1,7 @@
 import React from 'react';
 import ListForm from './ListForm'
 import Item from './Item'
+import { Button, Header, Icon } from 'semantic-ui-react';
 
 class GroceryList extends React.Component {
 
@@ -51,6 +52,7 @@ class GroceryList extends React.Component {
     };
 
     render() {
+
         let items = [];
 
         if (this.state.itemToShow === "All Items"){
@@ -63,7 +65,13 @@ class GroceryList extends React.Component {
 
 
         return (
+            
         <div>
+            <h1 class="ui center aligned icon header">
+            <i class="shopping cart icon"></i>
+                Grocery List
+            </h1>
+
             <ListForm onSubmit = {this.addItem} />
             {items.map( item => (
             <Item
@@ -77,9 +85,9 @@ class GroceryList extends React.Component {
                 Number of Items You Still Need: {this.state.items.filter( item => !item.complete).length}
                 </div>
                 <div>
-                    <button onClick={() => this.updateItemToShow('All Items')}>All Items</button>
-                    <button onClick={() => this.updateItemToShow('Items still needed')}>Items still needed</button>
-                    <button onClick={() => this.updateItemToShow('Items already in cart')}>Items already in cart</button>
+                    <Button onClick={() => this.updateItemToShow('All Items')}>All Items</Button>
+                    <Button onClick={() => this.updateItemToShow('Items still needed')}>Items still needed</Button>
+                    <Button onClick={() => this.updateItemToShow('Items already in cart')}>Items already in cart</Button>
 
                 </div>
                 {this.state.items.some(item => item.complete) ? (
@@ -90,7 +98,7 @@ class GroceryList extends React.Component {
                 </div>
                 ) : null}
                 <div>
-          <button
+          <button class="ui black basic button" 
             onClick={() =>
               this.setState(state => ({
                 items: state.items.map(item => ({
