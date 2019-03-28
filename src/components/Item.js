@@ -21,5 +21,6 @@ export default props => (
     size='mini'
     icon={<Icon name='trash' link onClick={props.onDelete}/>}/>
 
+
 </div>
 );
