@@ -14,7 +14,7 @@ export default props => (
     >
         {props.item.text}
     </div>
-    <Button color='red' size='small' onClick={props.onDelete}>x</Button>
+    <button color='red' onClick={props.onDelete}>x</button>
 </div>   
 );
  
