@@ -41,7 +41,7 @@ class GroceryList extends React.Component {
     };
     handleDeleteItem = id => {
         this.setState({
-           items: this.state.items.filter(item => item.id !== id) 
+           items: this.state.items.filter(item => item.id !== id)
         });
     };
 
@@ -61,11 +61,11 @@ class GroceryList extends React.Component {
             items = this.state.items.filter(item => !item.complete);
         } else if (this.state.itemToShow === "Items already in cart"){
             items = this.state.items.filter(item => item.complete);
-        } 
+        }
 
 
         return (
-            
+
         <div>
             <h1 class="ui center aligned icon header">
             <i class="shopping cart icon"></i>
@@ -81,24 +81,28 @@ class GroceryList extends React.Component {
             item = {item}
             />
             ))}
+            <br/>
             <div>
                 Number of Items You Still Need: {this.state.items.filter( item => !item.complete).length}
                 </div>
+                
                 <div>
-                    <Button onClick={() => this.updateItemToShow('All Items')}>All Items</Button>
-                    <Button onClick={() => this.updateItemToShow('Items still needed')}>Items still needed</Button>
-                    <Button onClick={() => this.updateItemToShow('Items already in cart')}>Items already in cart</Button>
+                    <Button inverted color='green' onClick={() => this.updateItemToShow('All Items')}>All Items</Button>
+                    <Button inverted color='pink' onClick={() => this.updateItemToShow('Items still needed')}>Items still needed</Button>
+                    <Button inverted color='blue' onClick={() => this.updateItemToShow('Items already in cart')}>Items already in cart</Button>
 
                 </div>
                 {this.state.items.some(item => item.complete) ? (
                 <div>
-                    <button onClick={this.removeAllItemsThatAreCollected}>
+                    <button  onClick={this.removeAllItemsThatAreCollected}>
                         Remove Items you already have from list
                     </button>
                 </div>
                 ) : null}
                 <div>
-          <button class="ui black basic button" 
+                <br/>
+
+          <button class="ui black basic button"
             onClick={() =>
               this.setState(state => ({
                 items: state.items.map(item => ({

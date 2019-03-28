@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 
 
 export default props => (
 <div style={{ display: "flex", justifyContent: 'center' }}>
-    <div 
+    <div
         style={{
         textDecoration: props.item.complete ? "line-through": ""
 
@@ -14,7 +14,15 @@ export default props => (
     >
         {props.item.text}
     </div>
-    <button color='red' onClick={props.onDelete}>x</button>
-</div>   
+
+    <br/>
+    <Button
+    inverted
+    color='red'
+    size='mini'
+    icon={<Icon name='trash' link onClick={props.onDelete}/>}/>
+
+
+</div>
+
 );
- 
