@@ -5,7 +5,6 @@ import { Button, Icon, Divider, Container } from 'semantic-ui-react';
 
 export default props => (
 
-
     <div style={{
       display: "flex",
       justifyContent: 'center'
