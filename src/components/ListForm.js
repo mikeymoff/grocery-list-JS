@@ -35,6 +35,7 @@ class ListForm extends Component {
         <form onSubmit={this.handleSubmit}>
         <input
         name="text"
+        style={{ textSize: 19}}
         value={this.state.text}
         onChange={this.handleChange}
         placeholder="Add Item..." />

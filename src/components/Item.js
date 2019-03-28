@@ -5,6 +5,7 @@ import { Button, Icon, Divider, Container } from 'semantic-ui-react';
 
 export default props => (
 
+
     <div style={{
       display: "flex",
       justifyContent: 'center'
@@ -21,7 +22,6 @@ export default props => (
           {props.item.text}
       </div>
 
-
     <Button
     floated='right'
     inverted
@@ -29,7 +29,7 @@ export default props => (
     size='mini'
     icon={<Icon name='trash' link onClick={props.onDelete}/>}/>
 
-    </div>
+</div>
 
 
 );
