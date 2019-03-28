@@ -13,7 +13,7 @@ class ListForm extends Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-           
+
         });
     };
 
@@ -27,18 +27,19 @@ class ListForm extends Component {
     this.setState({
         text: ""
     });
-         
+
     };
 
     render() {
         return (
         <form onSubmit={this.handleSubmit}>
-        <input 
+        <input
         name="text"
         style={{ textSize: 19}}
         value={this.state.text}
         onChange={this.handleChange}
         placeholder="Add Item..." />
+        < span>    </span> <span> </span>
         <Button size='small' color='blue' onClick={this.handleSubmit}>Add Item</Button>
         </form>
         );
