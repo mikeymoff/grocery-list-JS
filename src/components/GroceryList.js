@@ -94,8 +94,13 @@ class GroceryList extends React.Component {
                 </div>
                 {this.state.items.some(item => item.complete) ? (
                 <div>
+<<<<<<< HEAD
                     <button  onClick={this.removeAllItemsThatAreCollected}>
                         Remove Items you already have from list
+=======
+                    <button onClick={this.removeAllItemsThatAreCollected}>
+                        Remove All Items you already have in Cart
+>>>>>>> update Remove all  button name
                     </button>
                 </div>
                 ) : null}
